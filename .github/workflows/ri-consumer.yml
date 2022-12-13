@@ -2,6 +2,9 @@ name: Run ri consumer against sdc11073 provider
 
 on:
   push
+  schedule:
+    # run every morning at 05:00
+    - cron:  '0 5 * * *'
 
 jobs:
   test:
