@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: draegerwerk/sdc11073
-          ref: Version_1.1.x
+          ref: v1.1.x
           path: sdc11073_git
       - name: Install sdc11073
         run: |
