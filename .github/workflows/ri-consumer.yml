@@ -11,6 +11,7 @@ jobs:
     strategy:
       matrix:
         branch: [v1.1.x, master]
+      fail-fast: false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
