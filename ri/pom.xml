@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.draeger.integrationtest</groupId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <artifactId>ri</artifactId>
 
     <properties>
@@ -17,7 +17,7 @@
         <dependency>
             <groupId>org.somda.sdc</groupId>
             <artifactId>glue-examples</artifactId>
-            <version>4.0.0-SNAPSHOT</version>
+            <version>4.1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
