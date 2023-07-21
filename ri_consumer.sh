@@ -13,10 +13,10 @@ export ref_ssl_passwd=dummypass
 
 echo "Starting sdc11073 provider"
 
-if [args[0]="v1.x.y"] then
-python3 sdc11073_git/examples/ReferenceTest/reference_device.py &
+if [args[0]="v1.x.y"]; then
+    python3 sdc11073_git/examples/ReferenceTest/reference_device.py &
 else 
-python3 sdc11073_git/examples/ReferenceTest/reference_provider.py &
+    python3 sdc11073_git/examples/ReferenceTest/reference_provider.py &
 fi
 echo "Starting SDCri consumer"
 cd ri && mvn -Pconsumer-tls -Pallow-snapshots exec:java
