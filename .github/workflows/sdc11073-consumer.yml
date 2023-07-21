@@ -10,7 +10,7 @@ jobs:
   test:
     strategy:
       matrix:
-        branch: [v1.1.x, master]
+        branch: [v1.x.y, master]
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
@@ -36,4 +36,4 @@ jobs:
           python -m pip install -e ./sdc11073_git
       - name: Run test
         run: |
-          ./sdc11073_consumer.sh
+          ./sdc11073_consumer.sh ${{ matrix.branch }}
