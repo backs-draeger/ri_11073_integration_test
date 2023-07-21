@@ -2,6 +2,8 @@
 
 args=("$@")
 
+echo arg1 is "${args[0]}"
+
 ip addr
 echo ref_ip is "${ref_ip}"
 
