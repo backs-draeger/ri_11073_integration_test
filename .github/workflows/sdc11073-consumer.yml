@@ -2,15 +2,14 @@ name: Run sdc11073 consumer against ri provider
 
 on:
   push:
-  schedule:
-    # run every morning at 05:00 UTC
-    - cron:  '0 5 * * *'
 
 jobs:
   test:
     strategy:
       matrix:
-        branch: [v1.x.y, master]
+        branch: [master]
+        sdcri_version: ["5.1.1", "6.0.0-SNAPSHOT"]
+        tls_enable: [true, false]
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +24,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Checkout sdc11073 1.1.x
+      - name: Checkout sdc11073
         uses: actions/checkout@v3
         with:
           repository: draegerwerk/sdc11073
@@ -36,4 +35,4 @@ jobs:
           python -m pip install -e ./sdc11073_git
       - name: Run test
         run: |
-          ./sdc11073_consumer.sh ${{ matrix.branch }}
+          ./sdc11073_consumer.sh ${{ matrix.sdcri_version }} ${{ matrix.tls_enable }}
